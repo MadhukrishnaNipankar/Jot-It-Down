@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Todo Application API built in React and Chakra UI
+<!-- To make an API to fetch latest videos sorted in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<hr>
 
-## Available Scripts
+### ⚒ Problem Statement
+<details>
+  <summary>Click to expand</summary>
+   
+### ✓ Basic Requirements:
 
-In the project directory, you can run:
+- ✅ Server should call the YouTube API continuously in background (async) with some interval (say 10 seconds) for fetching the latest videos for a predefined search query and should store the data of videos (specifically these fields - Video title, description, publishing datetime, thumbnails URLs and any other fields you require) in a database with proper indexes.
 
-### `npm start`
+- ✅ A GET API which returns the stored video data in a paginated response sorted in descending order of published datetime.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ✅ It should be scalable and optimized.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Bonus Points:
 
-### `npm test`
+- ✅ Add support for supplying multiple API keys so that if quota is exhausted on one, it automatically uses the next available key.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ✅ Make a dashboard to view the stored videos with filters ( in-built DRF filters provided ) and sorting options (optional) 
 
-### `npm run build`
+### Instructions:
+* You are free to choose any search query, for example: official, cricket, football etc. (choose something that has high frequency of video uploads)
+* Try and keep your commit messages clean, and leave comments explaining what you are doing wherever it makes sense.
+* Also try and use meaningful variable/function names, and maintain indentation and code style.
+* Submission should have a README file containing instructions to run the server and test the API.
+* Submission should be done on GitHub Externship Portal.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Reference:
+* [YouTube data v3 API](https://developers.google.com/youtube/v3/getting-started)
+* [Search API reference](https://developers.google.com/youtube/v3/docs/search/list)
+* To fetch the latest videos you need to specify these: type=video, order=date, publishedAfter=<SOME_DATE_TIME>
+Without publishedAfter, it will give you cached results which will be too old
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<hr>
+   
+### 💡 Setup Guide
+- Clone the project
+- As this project is based on Django, your system need to have proper python setup, refer [this](https://www.python.org/downloads/)
+- Go the project through the terminal and install all dependencies by using typing `pip install -r requirements.txt` in the terminal
+- Inside the `setting.py` file, fill the variable `GOOGLE_API_KEYS` with all the API Keys available,the list should be filled as `['API_KEY_1','API_KEY_2',...]`
+- For getting an API key follow [this](https://developers.google.com/youtube/v3/getting-started)
+- Setup crontab to run Job, Follow [this](https://django-cron.readthedocs.io/en/latest/installation.html)
+- Run the server using `python mange.py runserver`
 
-### `npm run eject`
+ </details>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 📸 Screenshot
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Light Mode](https://github.com/G-Sudarshan/youtube-fetch-api-django/blob/main/docs/img/Screenshot%202022-02-08%20at%203.00.44%20PM.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   
+ <hr> -->

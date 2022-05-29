@@ -48,10 +48,11 @@ Without publishedAfter, it will give you cached results which will be too old
 - Run the server using `python mange.py runserver`
 
  </details>
+-->
+### 📸 Screenshots
 
-### 📸 Screenshot
-
-![Light Mode](https://github.com/G-Sudarshan/youtube-fetch-api-django/blob/main/docs/img/Screenshot%202022-02-08%20at%203.00.44%20PM.png)
-
-   
- <hr> -->
+![Light Mode](https://github.com/MadhukrishnaNipankar/Jot-It-Down/blob/main/docs/images/lightMode.png)
+ <hr> 
+ 
+![Dark Mode](https://github.com/MadhukrishnaNipankar/Jot-It-Down/blob/main/docs/images/darkMode.png)
+ <hr> 

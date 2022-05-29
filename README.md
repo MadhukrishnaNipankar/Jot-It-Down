@@ -1,4 +1,4 @@
-# Todo Application API built in React and Chakra UI
+# Todo Application built in React and Chakra UI
 <!-- To make an API to fetch latest videos sorted in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.
 
 <hr>

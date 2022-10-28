@@ -1,5 +1,6 @@
 import TodoList from "./TodoList";
 import AddTodo from "./AddTodo";
+import CompletedTask from "./CompletedTask";
 import { useState, useEffect} from "react";
 import { useColorMode } from "@chakra-ui/react";
 import { Heading } from "@chakra-ui/react";
@@ -7,17 +8,19 @@ import { VStack } from "@chakra-ui/react";
 import { IconButton } from "@chakra-ui/react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { Tooltip } from '@chakra-ui/react';
-
 function App() {
 const { colorMode, toggleColorMode } = useColorMode()
 
   const [todos, setTodos] = useState(
     () => JSON.parse(localStorage.getItem("todos")) || []
   );
-
+  const [completed_todos, setCompletedTodos] = useState(
+    () => JSON.parse(localStorage.getItem("completed_todos")) || []
+  );
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
+    localStorage.setItem("completed_todos", JSON.stringify(completed_todos));
+  }, [todos,completed_todos]);
 
   function deleteTodo(id) {
     const newTodos = todos.filter((todo) => {
@@ -28,6 +31,22 @@ const { colorMode, toggleColorMode } = useColorMode()
 
   function addTodo(todo) {
     setTodos([...todos, todo]);
+  }
+
+  /*Add to Completed todo*/
+  function addToCompletedToDo(completedToDo,id){
+      setCompletedTodos([...completed_todos,completedToDo])
+      const newTodos = todos.filter((todo) => {
+        return todo.id !== id;
+      });
+      setTodos(newTodos);
+  }
+  /*Delete The completed Todo*/
+  function deleteCompletedTodo(id){
+    const newTodos = completed_todos.filter((completed_todos) => {
+      return completed_todos.id !== id;
+    });
+    setCompletedTodos(newTodos);
   }
 
   return (
@@ -54,9 +73,9 @@ const { colorMode, toggleColorMode } = useColorMode()
         >
           Jot Your Todos Down !
         </Heading>
-
-        <TodoList todos={todos} deleteTodo={deleteTodo} />
         <AddTodo addTodo={addTodo} />
+        <TodoList todos={todos} deleteTodo={deleteTodo} addToCompletedToDo={addToCompletedToDo}/>
+        <CompletedTask completed_todos={completed_todos} deleteCompletedTodo={deleteCompletedTodo}/>
       </VStack>
     </div>
   );
